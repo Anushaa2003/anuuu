@@ -1,0 +1,8 @@
+# Accept filename input from the user
+filename = input("Input the Filename: ")
+
+# Extract the extension from the filename
+extension = filename.split('.')[-1]
+
+# Display the extracted extension
+print("The extension of the file is:", extension)
