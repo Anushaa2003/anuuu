@@ -1,3 +1,4 @@
+Radius of circle
 import math
 
 # Accept radius input from the user
@@ -8,3 +9,15 @@ area = math.pi * (radius ** 2)
 
 # Display the computed area
 print("The area of the circle with radius", radius, "is:", area)
+
+
+
+Filename
+# Accept filename input from the user
+filename = input("Input the Filename: ")
+
+# Extract the extension from the filename
+extension = filename.split('.')[-1]
+
+# Display the extracted extension
+print("The extension of the file is:", extension)
