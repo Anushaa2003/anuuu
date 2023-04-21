@@ -1,0 +1,12 @@
+def print_positive_numbers(nums):
+    positive_nums = []
+    for num in nums:
+        if num>0:
+            positive_nums.append(num)
+    print(",".join(str(num)for num in positive_nums))
+    
+list1=[12,-7,5,64,-14]
+print_positive_numbers(list1)#output:12,5,64
+            
+list2=[12,4,-95,3]
+print_positive_numbers(list2)#output:12,14,3
