@@ -1,0 +1,57 @@
+# Import necessary modules
+import os
+
+# Define file path and name
+file_path = "student_records.txt"
+
+# Define function to add a new student record
+def add_student():
+    # Prompt user for student information
+    name = input("Enter student name: ")
+    grade = input("Enter student grade: ")
+    
+    # Append new student record to file
+    with open(file_path, "a") as file:
+        file.write(f"{name},{grade}\n")
+        
+    print("Student record added successfully.")
+
+# Define function to view all student records
+def view_all_students():
+    # Read all student records from file
+    with open(file_path, "r") as file:
+        records = file.readlines()
+        
+    # Print each student record
+    for record in records:
+        name, grade = record.strip().split(",")
+        print(f"Name: {name}, Grade: {grade}")
+        
+# Define main function to display menu and handle user input
+def main():
+    # Create file if it does not exist
+    if not os.path.exists(file_path):
+        open(file_path, "w").close()
+    
+    # Display menu and prompt for user input
+    while True:
+        print("\nSchool Administration Program")
+        print("1. Add a new student")
+        print("2. View all students")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+        
+        # Handle user choice
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            view_all_students()
+        elif choice == "3":
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+            
+# Call main function to start program
+if __name__ == "__main__":
+    main()
