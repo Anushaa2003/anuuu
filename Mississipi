@@ -1,0 +1,16 @@
+def most_frequent(string):
+    # creating a dictionary to store the frequency of each character in the string
+    freq_dict = {}
+    for char in string:
+        freq_dict[char] = freq_dict.get(char, 0) + 1
+    
+    # sorting the dictionary based on the frequency of each character
+    sorted_dict = sorted(freq_dict.items(), key=lambda x: x[1], reverse=True)
+    
+    # printing the characters in decreasing order of frequency
+    for item in sorted_dict:
+        print(f"{item[0]} = {item[1]:02d}")
+
+most_frequent("Mississippi")
+
+most_frequent("Mississippi".lower())
